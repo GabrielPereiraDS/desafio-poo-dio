@@ -7,31 +7,38 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Curso curso1 = new Curso();
-        curso1.setTitulo("curso java");
-        curso1.setDescricao("descrição curso java");
-        curso1.setCargaHoraria(8);
 
-        Curso curso2 = new Curso();
-        curso2.setTitulo("curso js");
-        curso2.setDescricao("descrição curso js");
-        curso2.setCargaHoraria(4);
+        //new
+        Curso collections = new Curso();
+        collections.setTitulo("Conhecendo Collections java");
+        collections.setDescricao("COLLECTIONS");
+        collections.setCargaHoraria(4);
+        //new
+        collections.setProfessor("Camila Cavalcante.");
+        collections.setMaterialComplementar("https://github.com/cami-la/collections-java-api-2023");
+        collections.certificarConhecimento();
+
+        Curso streamAPI = new Curso();
+        streamAPI.setTitulo("Ganhando produtividade com Stream API");
+        streamAPI.setDescricao("STREAM API");
+        streamAPI.setCargaHoraria(2);
+        //new
+        streamAPI.setProfessor("Camila Cavalcante.");
+        streamAPI.setMaterialComplementar("REPOSITÓRIO GIT DO CURSO: https://github.com/digitalinnovationone/ganhando_produtividade_com_Stream_API_Java");
+        streamAPI.certificarConhecimento();
+
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
 
         Bootcamp bootcamp = new Bootcamp();
-        bootcamp.setNome("Bootcamp Java Developer");
-        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
-        bootcamp.getConteudos().add(curso1);
-        bootcamp.getConteudos().add(curso2);
-        bootcamp.getConteudos().add(mentoria);
+        bootcamp.setNome("Santander 2024 - Backend com Java");
+        bootcamp.setDescricao("Back-end java Santander 2024!");
+        bootcamp.getConteudos().add(collections);
+        bootcamp.getConteudos().add(streamAPI);
 
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
@@ -46,17 +53,19 @@ public class Main {
 
         System.out.println("-------");
 
-        Dev devJoao = new Dev();
-        devJoao.setNome("Joao");
-        devJoao.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        devJoao.progredir();
-        devJoao.progredir();
-        devJoao.progredir();
+        Dev devGabriel = new Dev();
+        devGabriel.setNome("Gabriel");
+        devGabriel.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Gabriel:" + devGabriel.getConteudosInscritos());
+        devGabriel.progredir();
+        devGabriel.progredir();
+        devGabriel.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
-        System.out.println("XP:" + devJoao.calcularTotalXp());
+        System.out.println("Conteúdos Inscritos Gabriel:" + devGabriel.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Gabriel:" + devGabriel.getConteudosConcluidos());
+        System.out.println("XP:" + devGabriel.calcularTotalXp());
+        System.out.println("-------------------");
+        System.out.println(bootcamp);
 
     }
 
